@@ -58,35 +58,35 @@ export const B2BPortal: React.FC = () => {
     <div className="min-h-screen bg-[#FAF8F5] pb-24">
       
       {/* Enterprise Header */}
-      <section className="bg-[#1C1917] text-white border-b border-[#38332E] py-14">
+      <section className="bg-[#1C1917] text-white border-b border-[#38332E] py-8 sm:py-14 w-full max-w-full overflow-x-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-xs tracking-widest uppercase text-[#F59E0B] font-semibold mb-3">
-              <Building2 className="w-3.5 h-3.5" />
-              <span>Architectural & Hospitality Procurement</span>
+            <div className="flex items-center gap-2 text-xs tracking-widest uppercase text-[#F59E0B] font-semibold mb-2 sm:mb-3">
+              <Building2 className="w-3.5 h-3.5 shrink-0" />
+              <span className="truncate">Architectural & Hospitality Procurement</span>
             </div>
 
-            <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight">
+            <h1 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight break-words">
               B2B Guild Commissions & Heritage Procurement
             </h1>
 
-            <p className="mt-4 text-sm sm:text-base text-[#D6D3D1] font-light leading-relaxed">
+            <p className="mt-3 sm:mt-4 text-xs sm:text-base text-[#D6D3D1] font-light leading-relaxed">
               Equip luxury resorts, private villas, corporate collections, and diplomatic embassies with 
               authentic Newari architectural woodwork, monumental lost-wax bronze installations, and hand-loomed textiles. 
               Protected by Shilpaya’s sovereign <strong>50/50 Milestone Billing Protocol</strong>.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-6 text-xs text-[#A8A29E] pt-6 border-t border-white/10">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-[#F59E0B]" />
+            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-6 text-xs text-[#A8A29E] pt-4 sm:pt-6 border-t border-white/10">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#F59E0B] shrink-0" />
                 <span>50% Upfront Guild Escrow</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-[#F59E0B]" />
-                <span>50% Post-QC Kathmandu Hub Release</span>
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#F59E0B] shrink-0" />
+                <span>50% Post-QC Hub Release</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-[#F59E0B]" />
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#F59E0B] shrink-0" />
                 <span>Tamper-Evident Hologram Seals</span>
               </div>
             </div>
@@ -95,7 +95,7 @@ export const B2BPortal: React.FC = () => {
       </section>
 
       {/* Main Content: RFP Form & Active Project Milestone Tracker */}
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 space-y-16">
+      <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10 sm:space-y-16 w-full max-w-full overflow-x-hidden">
         
         {/* SECTION 1: Milestone Billing System Overview */}
         <section className="bg-white rounded-lg border border-[#E7E2D9] p-8 shadow-xs">

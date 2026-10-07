@@ -178,8 +178,8 @@ export const ProductDetail: React.FC = () => {
             </div>
 
             {/* Master Artisan Profile Card */}
-            <div className="p-8 bg-white rounded-lg border border-[#E7E2D9] flex flex-col sm:flex-row gap-6 items-start">
-              <div className="relative w-20 h-20 rounded-full overflow-hidden bg-stone-200 shrink-0 border-2 border-[#B45309]">
+            <div className="p-4 sm:p-8 bg-white rounded-lg border border-[#E7E2D9] flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-stone-200 shrink-0 border-2 border-[#B45309]">
                 <img
                   src={artwork.artist.avatarUrl}
                   alt={artwork.artist.name}
@@ -188,9 +188,9 @@ export const ProductDetail: React.FC = () => {
                 />
               </div>
 
-              <div className="flex-1">
+              <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 flex-wrap">
-                  <h4 className="font-serif text-xl font-bold text-[#1C1917]">
+                  <h4 className="font-serif text-lg sm:text-xl font-bold text-[#1C1917] truncate">
                     {artwork.artist.name}
                   </h4>
                   <span className="text-xs font-nepali font-semibold text-[#B45309]">
@@ -207,9 +207,9 @@ export const ProductDetail: React.FC = () => {
                 </div>
 
                 <div className="mt-2 flex items-center gap-1.5 text-xs text-[#57534E]">
-                  <MapPin className="w-3.5 h-3.5 text-[#B45309]" />
-                  <span>{artwork.artist.workshopName} · {artwork.artist.location}</span>
-                  <span className="text-[10px] font-mono text-[#78716C] ml-1">
+                  <MapPin className="w-3.5 h-3.5 text-[#B45309] shrink-0" />
+                  <span className="truncate">{artwork.artist.workshopName} · {artwork.artist.location}</span>
+                  <span className="text-[10px] font-mono text-[#78716C] ml-1 hidden sm:inline">
                     ({artwork.artist.coordinates})
                   </span>
                 </div>
@@ -226,17 +226,17 @@ export const ProductDetail: React.FC = () => {
           <div className="lg:col-span-5 space-y-6">
             
             {/* Purchase & Acquisition Panel */}
-            <div className="p-8 bg-white rounded-lg border border-[#E7E2D9] shadow-xs space-y-6">
+            <div className="p-4 sm:p-8 bg-white rounded-lg border border-[#E7E2D9] shadow-xs space-y-5 sm:space-y-6">
               
               {/* Category & Status */}
               <div className="flex items-center justify-between text-xs text-[#78716C]">
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-1.5 truncate mr-2">
                   <span className="font-semibold text-[#B45309]">{artwork.category}</span>
                   <span aria-hidden="true">·</span>
-                  <span>{artwork.specifications.period}</span>
+                  <span className="truncate">{artwork.specifications.period}</span>
                 </div>
 
-                <span className={`font-semibold px-2 py-0.5 rounded text-[11px] ${
+                <span className={`font-semibold px-2 py-0.5 rounded text-[11px] shrink-0 ${
                   artwork.status === 'Available' ? 'bg-emerald-50 text-emerald-800' : 'bg-amber-50 text-amber-800'
                 }`}>
                   {artwork.status}
@@ -245,7 +245,7 @@ export const ProductDetail: React.FC = () => {
 
               {/* Title & Nepali Script */}
               <div>
-                <h1 className="font-serif text-3xl font-bold text-[#1C1917] leading-tight">
+                <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1917] leading-tight break-words">
                   {artwork.title}
                 </h1>
                 <p className="mt-1 font-nepali text-sm text-[#78716C] font-semibold">

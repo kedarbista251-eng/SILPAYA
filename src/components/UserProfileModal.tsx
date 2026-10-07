@@ -126,6 +126,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({ isOpen, onCl
 
     setCurrentUser(updated);
     showToast('Personal settings saved successfully.');
+    onClose();
   };
 
   const handleAddAddress = (e: React.FormEvent) => {

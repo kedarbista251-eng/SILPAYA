@@ -21,7 +21,7 @@ import {
   ARTISTS
 } from '../data/mockData';
 
-export type ViewType = 'storefront' | 'pdp' | 'collector' | 'artist' | 'verify' | 'b2b';
+export type ViewType = 'storefront' | 'pdp' | 'collector' | 'artist' | 'verify' | 'b2b' | 'profile';
 
 interface AppContextType {
   currentView: ViewType;
@@ -267,6 +267,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           setSelectedArtworkId(prodId);
           setCurrentView('pdp');
         }
+      } else if (hash === 'profile') {
+        setCurrentView('profile');
       } else if (hash === 'collector') {
         setCurrentView('collector');
       } else if (hash === 'artist') {

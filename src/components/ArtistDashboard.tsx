@@ -152,18 +152,18 @@ export const ArtistDashboard: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] pb-24">
+    <div className="min-h-screen bg-[#FAF8F5] pb-24 w-full max-w-full overflow-x-hidden">
       
       {/* Studio Header Bar */}
       <section className="bg-[#1C1917] text-white border-b border-[#38332E]">
-        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:py-8 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 text-xs tracking-widest uppercase text-[#F59E0B] font-semibold mb-1">
               <span>Patan & Bhaktapur Guild Portal</span>
               <span aria-hidden="true">·</span>
               <span className="font-nepali">कलाकार ड्यासबोर्ड</span>
             </div>
-            <h1 className="font-serif text-3xl font-bold text-white">
+            <h1 className="font-serif text-2xl sm:text-3xl font-bold text-white break-words">
               {t.studioTitle}
             </h1>
             <p className="mt-1 text-xs text-[#A8A29E]">

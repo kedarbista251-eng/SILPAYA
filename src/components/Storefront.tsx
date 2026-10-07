@@ -63,30 +63,30 @@ export const Storefront: React.FC = () => {
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#1C1917] via-[#1C1917]/70 to-transparent" />
 
-        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 py-12 sm:py-20 lg:py-28 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-xs tracking-widest uppercase text-[#F59E0B] font-semibold mb-4">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Cultural Archive & Direct Master Artisan Guilds</span>
+            <div className="flex items-center gap-2 text-xs tracking-widest uppercase text-[#F59E0B] font-semibold mb-3 sm:mb-4">
+              <Sparkles className="w-3.5 h-3.5 shrink-0" />
+              <span className="truncate">Cultural Archive & Direct Master Artisan Guilds</span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-6xl font-normal tracking-tight text-white leading-tight">
+            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-white leading-tight break-words">
               Sacred Heritage Forged in the Shadow of the Himalayas.
             </h1>
 
-            <p className="mt-6 text-base sm:text-lg text-[#D6D3D1] font-light leading-relaxed max-w-2xl">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-lg text-[#D6D3D1] font-light leading-relaxed max-w-2xl">
               SHILPAYA is the world’s direct sovereign portal for consecrated Nepalese Paubha paintings, 
               lost-wax gilded bronze sculptures, Newari sal-wood architectural carvings, and indigenous Mithila folk art. 
               Every acquisition is cryptographically cataloged with permanent provenance.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <button
                 onClick={() => {
                   const el = document.getElementById('collection-grid');
                   el?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="px-6 py-3 text-xs sm:text-sm font-semibold text-[#1C1917] bg-[#F59E0B] rounded hover:bg-[#D97706] transition-colors cursor-pointer"
+                className="px-6 py-3 text-xs sm:text-sm font-semibold text-[#1C1917] bg-[#F59E0B] rounded-lg hover:bg-[#D97706] transition-colors cursor-pointer text-center"
               >
                 Explore Curated Masterworks
               </button>
@@ -96,7 +96,7 @@ export const Storefront: React.FC = () => {
                   setCurrentView('b2b');
                   window.location.hash = 'b2b';
                 }}
-                className="px-6 py-3 text-xs sm:text-sm font-medium text-white border border-[#A8A29E]/50 rounded hover:bg-white/10 transition-colors cursor-pointer flex items-center gap-2"
+                className="px-6 py-3 text-xs sm:text-sm font-medium text-white border border-[#A8A29E]/50 rounded-lg hover:bg-white/10 transition-colors cursor-pointer flex items-center justify-center gap-2 text-center"
               >
                 <span>Enterprise & Museum Inquiries</span>
                 <ArrowRight className="w-4 h-4 text-[#F59E0B]" />

@@ -25,16 +25,16 @@ export const CollectorPortal: React.FC = () => {
   const activeItem = myCollection[selectedCollectorIndex] || myCollection[0];
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] pb-24">
+    <div className="min-h-screen bg-[#FAF8F5] pb-24 w-full max-w-full overflow-x-hidden">
       {/* Header Banner */}
-      <section className="bg-[#1C1917] text-white border-b border-[#38332E] py-12">
+      <section className="bg-[#1C1917] text-white border-b border-[#38332E] py-8 sm:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 text-xs tracking-widest uppercase text-[#F59E0B] font-semibold mb-1">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Sovereign Title & Cryptographic Custody</span>
+              <Sparkles className="w-3.5 h-3.5 shrink-0" />
+              <span className="truncate">Sovereign Title & Cryptographic Custody</span>
             </div>
-            <h1 className="font-serif text-3xl sm:text-4xl font-bold">
+            <h1 className="font-serif text-2xl sm:text-4xl font-bold break-words">
               Collector Vault & Provenance Portfolio
             </h1>
             <p className="mt-1 text-xs text-[#A8A29E]">

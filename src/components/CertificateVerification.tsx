@@ -37,17 +37,17 @@ export const CertificateVerification: React.FC = () => {
   const matchedArtwork = certificate ? artworks.find(a => a.id === certificate.artworkId) : null;
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] pb-24">
+    <div className="min-h-screen bg-[#FAF8F5] pb-24 w-full max-w-full overflow-x-hidden">
       
       {/* Header Banner */}
-      <section className="bg-[#1C1917] text-white border-b border-[#38332E] py-14">
+      <section className="bg-[#1C1917] text-white border-b border-[#38332E] py-8 sm:py-14">
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B45309]/20 border border-[#B45309]/40 text-[#F59E0B] text-xs font-semibold mb-4">
-            <Lock className="w-3.5 h-3.5" />
-            <span>Sovereign Nepalese Cultural Provenance Registry</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B45309]/20 border border-[#B45309]/40 text-[#F59E0B] text-xs font-semibold mb-3 sm:mb-4">
+            <Lock className="w-3.5 h-3.5 shrink-0" />
+            <span className="truncate">Sovereign Nepalese Cultural Provenance Registry</span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight">
+          <h1 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight break-words">
             Verify Digital Certificate of Authenticity
           </h1>
 
