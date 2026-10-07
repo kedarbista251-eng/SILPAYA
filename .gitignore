@@ -6,3 +6,8 @@ coverage/
 *.log
 .env*
 !.env.example
+__pycache__/
+*.pyc
+data/*.sqlite-shm
+data/*.sqlite-wal
+.vite/
