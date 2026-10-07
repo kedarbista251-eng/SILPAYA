@@ -1,0 +1,6 @@
+{
+  "name": "SHILPAYA - Nepalese Art & Heritage Archive",
+  "description": "Digital marketplace, master artist ecosystem, and cultural provenance archive for Nepalese art, handicrafts, and heritage goods.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

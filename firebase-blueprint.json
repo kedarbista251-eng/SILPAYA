@@ -1,0 +1,75 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with role, personal information, and preferences.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string", "maxLength": 100 },
+        "role": { "type": "string", "enum": ["collector", "artisan", "enterprise_buyer", "admin"] },
+        "phone": { "type": "string", "maxLength": 30 },
+        "bio": { "type": "string", "maxLength": 1000 },
+        "avatarUrl": { "type": "string" },
+        "workshopName": { "type": "string", "maxLength": 150 },
+        "artisanTitle": { "type": "string", "maxLength": 150 },
+        "location": { "type": "string", "maxLength": 150 },
+        "coordinates": { "type": "string", "maxLength": 50 },
+        "organizationName": { "type": "string", "maxLength": 150 },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["uid", "email", "displayName", "role"]
+    },
+    "SavedAddress": {
+      "title": "SavedAddress",
+      "description": "Shipping or vault delivery address saved by a collector or enterprise buyer.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "label": { "type": "string", "maxLength": 50 },
+        "recipientName": { "type": "string", "maxLength": 100 },
+        "streetAddress": { "type": "string", "maxLength": 200 },
+        "city": { "type": "string", "maxLength": 100 },
+        "stateProvince": { "type": "string", "maxLength": 100 },
+        "postalCode": { "type": "string", "maxLength": 30 },
+        "country": { "type": "string", "maxLength": 100 },
+        "isDefault": { "type": "boolean" },
+        "deliveryNotes": { "type": "string", "maxLength": 500 }
+      },
+      "required": ["id", "userId", "label", "recipientName", "streetAddress", "city", "country"]
+    },
+    "NotificationPreferences": {
+      "title": "NotificationPreferences",
+      "description": "Granular notification and communication settings for buyers and artists.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "emailOrderUpdates": { "type": "boolean" },
+        "emailCertificateMinted": { "type": "boolean" },
+        "emailCommissionQuotes": { "type": "boolean" },
+        "emailB2BMilestones": { "type": "boolean" },
+        "emailArtisanPayouts": { "type": "boolean" },
+        "smsUrgentAlerts": { "type": "boolean" },
+        "marketingDigest": { "type": "boolean" }
+      },
+      "required": ["userId"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Stores user profiles with role-specific attributes for artists and buyers."
+    },
+    "/users/{userId}/addresses/{addressId}": {
+      "schema": "SavedAddress",
+      "description": "Saved delivery addresses belonging to the user."
+    },
+    "/users/{userId}/preferences/{prefId}": {
+      "schema": "NotificationPreferences",
+      "description": "Notification settings belonging to the user."
+    }
+  }
+}
