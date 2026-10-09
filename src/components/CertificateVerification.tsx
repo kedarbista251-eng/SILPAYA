@@ -113,6 +113,15 @@ export const CertificateVerification: React.FC = () => {
             <p className="mt-1 text-xs text-[#78716C]">
               No cryptographic certificate matches "{inputQuery}". Please check the alphanumeric serial on the physical gold seal.
             </p>
+            <button
+              onClick={() => {
+                setInputQuery('SHP-ART-2026-000845');
+                setVerifyCertId('SHP-ART-2026-000845');
+              }}
+              className="mt-5 px-4 py-2 text-xs font-semibold text-white bg-[#1C1917] rounded-lg hover:bg-stone-800 transition-colors cursor-pointer"
+            >
+              Load Verified Sample Registry (SHP-ART-2026-000845)
+            </button>
           </div>
         ) : (
           <div className="space-y-8">

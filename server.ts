@@ -1,8 +1,11 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+import type { Request, Response } from 'express';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import http from 'http';
-import { spawn, ChildProcess } from 'child_process';
+import { spawn } from 'child_process';
+import type { ChildProcess } from 'child_process';
 import { db, initDatabase } from './src/server/db.ts';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -848,9 +851,11 @@ function tryStartFastApi() {
 async function startServer() {
   const isProd = process.env.NODE_ENV === 'production';
   
-  // Always use port 3000 as required by AI Studio environment constraints
+  // Prioritize CLI argument --port if provided, otherwise respect process.env.PORT, otherwise default to 3000
   const portArgIndex = process.argv.indexOf('--port');
-  const port = portArgIndex !== -1 ? Number(process.argv[portArgIndex + 1]) : 3000;
+  const port = portArgIndex !== -1 
+    ? Number(process.argv[portArgIndex + 1]) 
+    : (process.env.PORT ? Number(process.env.PORT) : 3000);
   
   const hostArgIndex = process.argv.indexOf('--host');
   const host = hostArgIndex !== -1 ? process.argv[hostArgIndex + 1] : '0.0.0.0';
@@ -866,7 +871,20 @@ async function startServer() {
     const distPath = path.resolve(__dirname, 'dist');
     app.use(express.static(distPath));
     app.get('*', (req: Request, res: Response) => {
-      res.sendFile(path.join(distPath, 'index.html'));
+      const indexPath = path.join(distPath, 'index.html');
+      if (fs.existsSync(indexPath)) {
+        res.sendFile(indexPath);
+      } else {
+        res.status(200).send(`
+          <!DOCTYPE html>
+          <html>
+            <head><title>SHILPAYA</title></head>
+            <body>
+              <p>Application loading...</p>
+            </body>
+          </html>
+        `);
+      }
     });
   }
 

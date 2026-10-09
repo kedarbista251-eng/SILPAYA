@@ -72,6 +72,16 @@ export const CartDrawer: React.FC = () => {
                 <ShoppingBag className="w-12 h-12 text-stone-300 mx-auto mb-3" />
                 <p className="font-serif text-lg font-bold text-[#1C1917]">Your bag is empty</p>
                 <p className="text-xs text-[#78716C] mt-1">Browse the gallery to select sacred Himalayan pieces.</p>
+                <button
+                  onClick={() => {
+                    setIsCartOpen(false);
+                    setCurrentView('storefront');
+                    window.location.hash = 'gallery';
+                  }}
+                  className="mt-5 px-4 py-2 text-xs font-semibold text-white bg-[#1C1917] rounded-lg hover:bg-stone-800 transition-colors cursor-pointer"
+                >
+                  Explore Curated Masterworks
+                </button>
               </div>
             ) : !isCheckingOut ? (
               <div className="space-y-4">

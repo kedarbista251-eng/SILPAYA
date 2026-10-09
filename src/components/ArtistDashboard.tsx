@@ -638,8 +638,17 @@ export const ArtistDashboard: React.FC = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-6">
-              {commissions.map((com) => (
+            {commissions.length === 0 ? (
+              <div className="p-12 text-center bg-white rounded-lg border border-[#E7E2D9]">
+                <Clock className="w-12 h-12 text-stone-300 mx-auto mb-3" />
+                <h4 className="font-serif text-lg font-bold text-[#1C1917]">No Active Commission Inquiries</h4>
+                <p className="text-xs text-[#78716C] mt-1 max-w-md mx-auto">
+                  New collector requests for bespoke sacred sculptures, thangka paintings, and architectural joinery will appear here.
+                </p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 gap-6">
+                {commissions.map((com) => (
                 <div
                   key={com.id}
                   className="bg-white rounded-lg border border-[#E7E2D9] p-6 shadow-xs flex flex-col md:flex-row md:items-start justify-between gap-6"
@@ -731,6 +740,7 @@ export const ArtistDashboard: React.FC = () => {
                 </div>
               ))}
             </div>
+            )}
 
             {/* Modal for Submitting Quote */}
             {activeQuoteId && (
